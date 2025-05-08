@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.nav {
+    width: 100%;
+    height: 15vh;
+    background-color: rgba(6, 38, 111, 0.69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10vh;
+}
+
+.list a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.list a:hover {
+    color: #03194d;
+    background-color: white;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+}
+
+.dashboard-container {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 42px;
+    color: #03194d;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #555;
+    line-height: 1.8;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background-color:  #041b51e1;
+    color: white;
+    width: 300px;
+    height: 40vh;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: rgba(243, 245, 244, 0.368);
+}
+
+.button {
+    position: relative;
+    top: 20px;
+    font-size: 18px;
+    color: #03194d;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px white;
+
+    
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    background-color:  #031743d5;
+}
+
+.card a:hover {
+    background-color: #03194d;
+    color: white;
+    cursor: pointer;
+}
+
+.card .button:hover{
+    background-color: #03194d;
+    color: wheat;
+    border: 1px solid whitesmoke;
+}
+
+.report-section {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #03194d;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.report-section p{
+    position: relative;
+    bottom: 30px;
+}
+
+.report-button {
+    position: relative;
+    bottom: 12px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #005d7f;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.report-button:hover {
+    background-color: #00425d;
+    color: wheat;
+}
+
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .report-button {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .card h3 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .report-button {
+        font-size: 18px;
+        padding: 15px 25px;
+    }
+}
+
+.text{
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    width: 60%;
+    height: 50%;
+    border-radius: 12px;
+    border: 2px groove blue;
+    background-color: #005d7f;
+   
+}
+.text p{
+    color: whitesmoke;
+    font-weight: bolder;
+}

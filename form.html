@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <form action="send.php" method="post">
+            <h2><a href="#" target="_self">Register Now:</a></h2>
+            <input type="text" name="name" id="name" placeholder="User name:">
+            <input type="number" name="age" id="age" placeholder="User age (Above 10 years!)">
+            <input type="password" name="password" id="password" placeholder="User Password (At least 3 Characters!)">
+            <button type="submit" name="send">Sign Up</button>
+        </form>
+    </div>
+    <!-- <script>
+        const form = document.querySelector('form');
+        const nameInput = document.querySelector('#name');
+        const ageInput = document.querySelector('#age');
+        const passwordInput = document.querySelector('#password');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(nameInput.value === '' || ageInput.value === '' || passwordInput.value === ''){
+                alert('Please fill in all the fields');
+            } else if(parseInt(ageInput.value) < 10){
+                alert('You must be at least 10 years old to register');
+            } else if(passwordInput.value.length < 3){
+                alert('Password must be at least 3 characters long');
+            } else {
+                alert('Registration Successful');
+                form.submit(); // Allow the form to submit after successful validation
+            }
+        });
+    </script> -->
+</body>
+</html>

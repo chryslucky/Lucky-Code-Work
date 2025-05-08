@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-135%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-25px); }
+    60% { transform: translateY(0); }
+    80% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, rgba(6, 37, 111, 0.855), rgba(6, 38, 111, 0.69));
+    color: #333;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    font-size: 42px;
+    color: #03194d;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #555;
+    line-height: 1.8;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #041b51e1;
+    color: white;
+    width: 300px;
+    height: 40vh;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    animation: fadeIn 4s ease-in-out;
+    overflow: hidden;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: rgba(243, 245, 244, 0.368);
+}
+
+.card .button {
+    font-size: 18px;
+    color: #03194d;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px white;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1.5s ease-out forwards; /* Added animation duration and easing */
+    display: inline-block;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    background-color: #031743d5;
+}
+
+.card .button:hover {
+    background-color: #03194d;
+    color: wheat;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+    transform: translateY(-5px); /* Button hover effect */
+}
+
+.report-section {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #03194d;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 6s ease-in-out;
+}
+
+.report-section p {
+    position: relative;
+    transform: translateY(12px);
+}
+
+.report-button {
+    position: relative;
+    transform: translateY(3px);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #005d7f;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    border: 2px solid transparent;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.report-button:hover {
+    color: #fff;
+    background-color: #00425d;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .card .button,
+    .report-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .card h3 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .card .button,
+    .report-button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}

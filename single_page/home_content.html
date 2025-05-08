@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Content</title>
+    <link rel="stylesheet" href="home_content.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Select an option from the navigation menu to manage your system.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Add Class</h3>
+                <p>Manage your classes efficiently with this section.</p>
+                <a href="home.php?cls=1" class="button" style="animation-delay: 1s;">Go to Add Class</a>
+            </div>
+
+            <div class="card">
+                <h3>Add Teacher</h3>
+                <p>Add new teachers and manage their details easily.</p>
+                <a href="home.php?tch=1" class="button" style="animation-delay: 2s;">Go to Add Teacher</a>
+            </div>
+
+            <div class="card">
+                <h3>Add Student</h3>
+                <p>Easily add students to your system and keep track of their data.</p>
+                <a href="home.php?std=1" class="button" style="animation-delay: 3s;">Go to Add Student</a>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <p>Want to track all your data? Generate detailed reports with just a click.</p>
+            <a href="home.php?rpt=1" class="report-button">Go to Report Section</a>
+        </div>
+    </div>
+</body>
+</html>
