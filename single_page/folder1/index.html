@@ -1,0 +1,124 @@
+<!DOCTYPE html> <!-- Defines the document type as HTML -->
+<html lang="en"> <!-- Specifies the language of the document -->
+<head>
+    <meta charset="UTF-8"> <!-- Ensures correct text encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Enables responsive design on mobile -->
+    <title>Typewriter Effect</title> <!-- Sets the title displayed in the browser tab -->
+    <link rel="icon" href="image.png" type="image/png">
+
+    <style>
+        /* Reset styles to remove default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styles for the entire page */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212;
+            overflow: hidden;
+            color: #a712a2;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Typewriter text animation container */
+        .typewriter-container {
+            font-size: 24px;
+            font-weight: bold;
+            border: 3px solid #00f0ff;
+            white-space: normal;
+            max-width: 50vw;
+            overflow: hidden;
+            padding: 10px;
+            animation: fadeCursor 0.8s steps(1) infinite, moveCursor 1s ease-in-out infinite;
+            text-shadow: 0 0 8px #00f0ff;
+            border-radius: 10px;
+        }
+
+        /* Cursor fade-in-out effect */
+        @keyframes fadeCursor {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Cursor movement */
+        @keyframes moveCursor {
+            0% { transform: translateX(0px); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(0px); }
+        }
+
+        /* Confetti styling */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            opacity: 1;
+            animation: fall 3s linear infinite;
+        }
+
+        /* Confetti falling animation */
+        @keyframes fall {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Typewriter effect container -->
+    <div class="typewriter-container" id="typewriter"></div>
+
+    <script>
+        const text = "Hello, I'm AKA Chrysante Lucky, a passionate developer! Now we're gonna make it Professional! Crafting intuitive solutions, optimizing efficiency, and bringing ideas to life through code. Let's build the future, one innovation at a time!";
+        const speed = 80; // Typing speed in milliseconds
+        let index = 0;
+        const typewriter = document.getElementById("typewriter"); // Gets container
+
+        function Writer() {
+            if (index < text.length) {
+                typewriter.textContent += text.charAt(index);
+                index++;
+                setTimeout(Writer, speed);
+            } else {
+                setTimeout(triggerConfetti, 1000); // Start confetti animation after text is written
+                setTimeout(() => { window.close(); }, 2000); // Close browser tab after 5 seconds
+            }
+        }
+
+        // Confetti Effect
+        function triggerConfetti() {
+            for (let i = 0; i < 100; i++) {
+                let confetti = document.createElement("div");
+                confetti.classList.add("confetti");
+                document.body.appendChild(confetti);
+
+                confetti.style.left = Math.random() * window.innerWidth + "px";
+                confetti.style.top = Math.random() * -200 + "px";
+                confetti.style.backgroundColor = getRandomColor();
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Generate random colors for confetti
+        function getRandomColor() {
+            const colors = ["red", "blue", "yellow", "green", "purple", "orange", "pink"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        window.onload = Writer; // Runs effect when page loads
+    </script>
+
+</body>
+</html>
